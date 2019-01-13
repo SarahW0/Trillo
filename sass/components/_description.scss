@@ -1,0 +1,85 @@
+.description {
+  background-color: orangered;
+
+  padding: 2rem;
+  flex: 0 0 60%;
+  margin: 4rem;
+
+  background-color: #fff;
+  box-shadow: var(--shadow-light);
+
+  .paragraph:not(:last-of-type) {
+    margin-bottom: 2rem;
+  }
+
+  .list {
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      flex: 0 0 50%;
+      margin-bottom: 0.7rem;
+
+      &::before {
+        content: "›";
+        font-size: 2rem;
+        line-height: 1rem;
+        margin: auto 0.5rem;
+        color: var(--color-primary);
+      }
+    }
+  }
+
+  .recommend {
+    font-size: 1.1rem;
+    color: var(--color-grey-dark-3);
+
+    display: flex;
+    align-items: center;
+
+    &__count {
+      margin-right: auto;
+      @include respond(small-phone) {
+        flex: 0 0 50%;
+      }
+    }
+
+    &__friends {
+    }
+    &__photo {
+      height: 4rem;
+      width: 4rem;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-sizing: content-box;
+
+      &:not(:last-child) {
+        margin-right: -1.5rem;
+
+        @include respond(small-phone) {
+          margin-right: -2rem;
+        }
+      }
+
+      @include respond(small-phone) {
+        height: 3rem;
+        width: 3rem;
+      }
+    }
+  }
+
+  @include respond(tab-land) {
+    margin: 1.2rem;
+    margin-right: 0;
+  }
+
+  @include respond(phone) {
+    padding: 2rem;
+    margin: 2rem 1.2rem 1rem 1.2rem;
+  }
+}
